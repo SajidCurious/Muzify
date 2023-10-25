@@ -1,3 +1,5 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
 const options = {
   method: "GET",
   headers: {
@@ -10,3 +12,5 @@ fetch("https://shazam.p.rapidapi.com/charts/track", options)
   .then((response) => response.json())
   .then((response) => console.log(response))
   .catch((err) => console.error(err));
+
+export const shazamCoreApi = createApi({ reducerPath: "shazamCoreApi" });
